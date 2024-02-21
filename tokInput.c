@@ -2,26 +2,52 @@
 
 /**
  * tokenize - tokenizes the input command
- * @command: pinter to the string input
+ * @userInput: inputed line by user
  * Return: An array of strings
  */
 
-char **tokenize(char *command)
+char **tokenize(char *userInput)
 {
-	int i = 0;
-	char *token;
-	char **arr;
+	int i, count;
+	char *token, tmp;
+	char **arrayOfTokens;
+	
+	i = 0;
+	count = 0;
+	token = NULL;
+	tmp = NULL;
+	arrayOfTokens = NULL;
 
-	token = strtok(command, "\n");
-	arr = malloc(sizeof(char *) * 1024);
-	if (arr == NULL)
+	if (userInput == NULL)
+		return (NULL);
+	tmp = strdub(userInput); /*create tmp using it to count of strings then we used in malloc*/
+	token = strtok(tmp, "\n");
+	while (token) /*while to count*/
+	{
+		count++;
+		token = strtok(NULL, "\n");
+	}
+	free(tmp);
+	tmp = NULL;
+	arrayOfTokens= malloc(sizeof(char *) * (count + 1));
+	if (arrayOfTokens == NULL)
+	{
 		perror("Error");
-
+		free(userInput);
+		userInput = NULL;
+		return (NULL);
+	}
+	/*all above lines to calculate count*/
+	token = strtok(userInput, "\n");
 	while (token)
 	{
-		arr[i] = token;
+		arrayOfTokens[i++] = token;
 		token = strtok(NULL, "\n");
-		i++;
 	}
-	return (arr);
+	arrayOfTokens[i] = NULL /*last token must be equal NULL*/
+	free(userInput);
+	userInput = NULL;
+
+	return (arrayOfTokens);
+
 }
