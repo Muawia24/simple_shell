@@ -14,6 +14,6 @@
 
 void _print(const char *string);
 char *getUserInput(void);
-char **tokenize(char *command);
+char **tokenize(char *userInput);
 
 #endif 

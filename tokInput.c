@@ -9,7 +9,7 @@
 char **tokenize(char *userInput)
 {
 	int i, count;
-	char *token, tmp;
+	char *token, *tmp;
 	char **arrayOfTokens;
 	
 	i = 0;
@@ -20,14 +20,14 @@ char **tokenize(char *userInput)
 
 	if (userInput == NULL)
 		return (NULL);
-	tmp = strdub(userInput); /*create tmp using it to count of strings then we used in malloc*/
+	tmp = strdup(userInput); /*create tmp using it to count of strings then we used in malloc*/
 	token = strtok(tmp, "\n");
 	while (token) /*while to count*/
 	{
 		count++;
 		token = strtok(NULL, "\n");
 	}
-	free(tmp);
+	/*free(tmp);*/
 	tmp = NULL;
 	arrayOfTokens= malloc(sizeof(char *) * (count + 1));
 	if (arrayOfTokens == NULL)
@@ -44,9 +44,7 @@ char **tokenize(char *userInput)
 		arrayOfTokens[i++] = token;
 		token = strtok(NULL, "\n");
 	}
-	arrayOfTokens[i] = NULL /*last token must be equal NULL*/
-	free(userInput);
-	userInput = NULL;
+	arrayOfTokens[i] = NULL; /*last token must be equal NULL*/
 
 	return (arrayOfTokens);
 
