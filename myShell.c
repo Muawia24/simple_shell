@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	char *userInput = NULL;
 	int exitStatus = 0, status;
 	char **arr;
+	char *head = NULL;
 	(void)argc;
 	(void)argv;
 
@@ -35,7 +36,9 @@ int main(int argc, char *argv[])
 
 		if (child == 0)
 		{
-			if (execve(arr[0], arr, NULL) == -1)
+			char *p = getPath(&head);
+			strcat(p, arr[0]);
+			if (execve(p, arr, NULL) == -1)
 				perror("Error");
 		}
 		else

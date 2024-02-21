@@ -12,6 +12,12 @@
 #include <fcntl.h>
 #include <stdbool.h>
 
+typedef struct list_s
+{
+char *dir;
+struct list_s *next;
+} list_t;
+
 void _print(const char *string);
 char *getUserInput(void);
 char **tokenize(char *userInput);
