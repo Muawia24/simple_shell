@@ -21,5 +21,8 @@ struct list_s *next;
 void _print(const char *string);
 char *getUserInput(void);
 char **tokenize(char *userInput);
+char *getPath(list_t *head, char *command);
+list_t *add_pathNode(list_t **head, char *dir);
+void free_pathList(list_t *head);
 
 #endif 

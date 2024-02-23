@@ -7,18 +7,18 @@
 
 char *getUserInput(void)
 {
-	char *storedInput;
+	char *buf = NULL;
 	size_t len;
 	ssize_t n;
 
-	storedInput = NULL;
+	buf = NULL;
 	len = 0;
-	n = getline(&storedInput, &len, stdin);
+	n = getline(&buf, &len, stdin);
 	if (n == -1)
 	{
-		free(storedInput);
+		free(buf);
 		return (NULL);
 	}
 
-	return (storedInput);
+	return (buf);
 }

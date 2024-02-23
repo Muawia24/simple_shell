@@ -13,40 +13,39 @@ int main(int argc, char *argv[])
 	char *userInput = NULL;
 	int exitStatus = 0, status;
 	char **arr;
-	char *head = NULL;
-	(void)argc;
-	(void)argv;
+	list_t *head = NULL;
+	(void)argc, (void)argv;
 
 	while (true)
 	{
 
 		if (isatty(0))
-			_print("$ ");
+			_print("survival mashine$ ");
 		userInput = getUserInput();
-		if (userInput == NULL)   /* C-d */
+		if (userInput == NULL)	/*C-d*/
 		{
 			if (isatty(0))
 				_print("\n");
 			return (exitStatus);
 		}
-		_print(userInput);
 		arr = tokenize(userInput);
 		child = fork();
-		free(userInput);
-
 		if (child == 0)
 		{
-			char *p = getPath(&head);
-			strcat(p, arr[0]);
+
+		/* Line below checks for the command executable then execute it*/
+
+			char *p = getPath(head, arr[0]);
+
 			if (execve(p, arr, NULL) == -1)
 				perror("Error");
 		}
 		else
 		{
 			wait(&status);
+			free(userInput);
+			free_pathList(head);
 		}
-
 	}
-
 	return (0);
 }
