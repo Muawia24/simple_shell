@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+/**
+* main - fork example
+*
+* Return: Always 0
+*/
+
+int main(void)
+{
+	char *cmd[] = {"/bin/ls", "-l", "/usr/", NULL};
+	pid_t forkValue;
+	int status;
+
+	printf("Before fork\n");
+	forkValue = fork();
+	if(forkValue == 0)
+	{
+		if(execve(cmd[0], cmd, NULL))
+		{
+			perror("Error");
+		}
+	}
+	else
+		waitpid(forkValue, &status, 0);  //go review waitpid and fork
+		printf("child finished\n");
+		printf("status of child is %d\n",WEXITSTATUS(status));
+	
+
+	return (0);
+}
