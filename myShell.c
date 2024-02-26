@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	{
 
 		if (isatty(0))
-			_print("survival mashine$ ");
+			_print("simple_shell$ ");
 		userInput = getUserInput();
 		if (userInput == NULL)	/*C-d*/
 		{
@@ -29,6 +29,8 @@ int main(int argc, char *argv[])
 			return (exitStatus);
 		}
 		arr = tokenize(userInput);
+		printf("%s\n", arr[0]);
+		getBuiltIn(arr[0]);
 		child = fork();
 		if (child == 0)
 		{

@@ -24,5 +24,8 @@ char **tokenize(char *userInput);
 char *getPath(list_t *head, char *command);
 list_t *add_pathNode(list_t **head, char *dir);
 void free_pathList(list_t *head);
+void getBuiltIn(char *command);
+void print_env();
+ssize_t _getline(char **buf, size_t *n, FILE *stream);
 
 #endif 
