@@ -27,5 +27,6 @@ void free_pathList(list_t *head);
 void getBuiltIn(char *command);
 void print_env();
 ssize_t _getline(char **buf, size_t *n, FILE *stream);
+char *_strtok(char *userInput, char *delim);
 
 #endif 

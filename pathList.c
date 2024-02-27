@@ -52,16 +52,19 @@ char *getPath(list_t *h, char *command)
 	list_t *current;
 	char **arr;
 
+	if (access(command, X_OK) == 0)
+		return (command);
+
 	/* Extract and tokenize the env variable "PATH" by ":"*/
 
 	head = NULL;
 	ptr = getenv("PATH");
-	token = strtok(ptr, ":");
+	token = _strtok(ptr, ":");
 
 	while (token)
 	{
 		add_pathNode(&head, token);	/*addes directories to linked list*/
-		token = strtok(NULL, ":");
+		token = _strtok(NULL, ":");
 	}
 
 	/* Looping through the list and checking for the command executable*/

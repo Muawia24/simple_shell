@@ -22,15 +22,16 @@ char **tokenize(char *userInput)
 
 	/* Tokenize userInput into arrayOfTokens*/
 	count = 0;
-	token = strtok(userInput, " \n");
+	token = _strtok(userInput, " \n");
 	arr[0] = token;
 	while (token)
 	{
 		arr[count] = token;
-		token = strtok(NULL, " \n");
+		token = _strtok(NULL, " \n");
 		count++;
 	}
 	arr[count] = NULL; /* Ensure last token is NULL*/
 
 	return (arr);
 }
+
