@@ -1,49 +1,55 @@
 #include "shell.h"
-char **tokenizer(char *userInput) {
-  char *token = NULL, *tmp = NULL;
-  char **arrayOfTokens = NULL;
-  int count = 0, i = 0;
+#include <stdio.h>
 
-  if (!userInput) /*that case no input from user*/
-  {
-    return (NULL);
-  }
-  /*userInput = "ls -la"*/
-  tmp = _strdup(userInput); /*tmp = "ls -la"*/
-  token = strtok(tmp, SEP);
+char **tokenizer(char *userInput)
+{
+	char *token = NULL, *tmp = NULL;
+	char **arrayOfTokens = NULL;
+	int count = 0, i = 0;
 
-  if (token == NULL) /*that case user just enter spaces*/
-  {
-    free(userInput), userInput = NULL;
-    free(tmp), tmp = NULL;
-    return (NULL);
-  } /*toke = ls*/
+	if (!userInput) /*that case no input from user*/
+		return (NULL);
+		/*userInput = "ls -la"*/
+	tmp = _strdup(userInput); /*tmp = "ls -la"*/
+        if (!tmp)
+                return (NULL);
+	token = strtok(tmp, SEP);
 
-  while (token) {
-    count++;                   /*count = 2*/
-    token = strtok(NULL, SEP); /*after loop token = NULL*/
-  }
+	if (token == NULL) /*that case user just enter spaces*/
+	{
+		free(userInput), userInput = NULL;
+		free(tmp), tmp = NULL;
+		return (NULL);
+	} /*toke = ls*/
 
-  free(tmp), tmp = NULL; /*tmp = NULL*/
+	while (token)
+	{
+		count++;                   /*count = 2*/
+		token = strtok(NULL, SEP); /*after loop token = NULL*/
+	}
 
-  arrayOfTokens =
-      malloc(sizeof(char *) * (count + 1)); /*malloc 3 string due to NULL*/
+	free(tmp), tmp = NULL; /*tmp = NULL*/
 
-  if (!arrayOfTokens) /*if success arrayOfTokens = {"","",NULL}*/
-  {
-    free(userInput), userInput = NULL;
-    return (NULL);
-  }
+	arrayOfTokens =
+	malloc(sizeof(char *) * (count + 1)); /*malloc 3 string due to NULL*/
 
-  token = strtok(userInput, SEP); /*first token = "ls"*/
+	if (!arrayOfTokens) /*if success arrayOfTokens = {"","",NULL}*/
+	{
+		free(userInput), userInput = NULL;
+                fprintf(stderr, "Error while allocation");
+		return (NULL);
+	}
 
-  while (token) {
-    arrayOfTokens[i++] = _strdup(token); /*arrayOfTokens = {"ls","-la",NULL}*/
-    token = strtok(NULL, SEP);
-  }
+	token = strtok(userInput, SEP); /*first token = "ls"*/
 
-  free(userInput), userInput = NULL;
-  arrayOfTokens[i] = NULL;
+	while (token)
+	{
+		arrayOfTokens[i++] = _strdup(token); /*arrayOfTokens = {"ls","-la",NULL}*/
+		token = strtok(NULL, SEP);
+	}
 
-  return (arrayOfTokens);
+	free(userInput), userInput = NULL;
+	arrayOfTokens[i] = NULL;
+
+	return (arrayOfTokens);
 }

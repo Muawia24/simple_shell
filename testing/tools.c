@@ -35,16 +35,18 @@ char *_itoa(int n) {
   return (_strdup(buffer));
 }
 
-void reverseString(char *string, int len) {
-  char tmp;
-  int begin, end;
+void reverseString(char *string, int len)
+{
+	/* char tmp; */
+	int begin, end;
 
-  begin = 0;
-  end = len - 1;
-  while (begin < end) {
-    tmp = string[begin];
-    string[begin] = string[end];
-    begin++;
-    end--;
-  }
+	begin = 0;
+	end = len - 1;
+	while (begin < end)
+	{
+		/* tmp = string[begin]; */
+		string[begin] = string[end];
+		begin++;
+		end--;
+	}
 }

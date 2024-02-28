@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <unistd.h>
 
 /**
 * getUserInput - Function to get user input
@@ -7,12 +8,12 @@
 
 char *getUserInput(void)
 {
-	char *storedInput;
-	size_t len;
+	char *storedInput = NULL;
+	size_t len = 0; 
 	ssize_t n;
-
-	storedInput = NULL;
-	len = 0;
+	
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "$ ", 2);
 	n = getline(&storedInput, &len, stdin);
 	if (n == -1)
 	{

@@ -1,4 +1,6 @@
 #include "shell.h"
+#include <fcntl.h>
+#include <stdlib.h>
 /**
  *execCommand - Function to execute child program
  *@coomand: Command to execute
@@ -9,7 +11,7 @@
 int execCommand(char **command, char **argv, int indexint) {
   char *commmandPath;
   pid_t childPid;
-  int exitStatus = 0;
+  int exitStatus;
 
   commmandPath = getPath(command[0]);
   if (!commmandPath) {
