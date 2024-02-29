@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 {
 	char *userInput = NULL;
 	char **command = NULL;
-	int status = 0;
+	int status = 0, index = 0;
 	(void) argc;
 
 	while (true)
@@ -26,11 +26,12 @@ int main(int argc, char **argv)
 				write(STDOUT_FILENO, "\n", 1);
 			return (status);
 		}
+		index++;
 
 		command = tokenizer(userInput);
 		if (!command)
 			continue;
 
-		status = execCommand(command, argv);
+		status = execCommand(command, argv, index);
 	}
 }

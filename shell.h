@@ -28,7 +28,13 @@ char *_strcpy(char *dest, char *src);
 char *_strdup(const char *str);
 void _puts(char *str);
 void freeAllocated(char **_2darray);
-int execCommand(char **command, char **argv);
+int execCommand(char **command, char **argv, int index);
+char *getEnv(char *envVriable);
+char *getPath(char *command);
+char *_itoa(int n);
+void Error(char *name, char *command, int idx);
+void reverseString(char *string, int len);
+
 
 
 #endif
