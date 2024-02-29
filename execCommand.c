@@ -5,6 +5,7 @@
  * execCommand - To execute the command
  * @command: command to execute
  * @argv: argunments
+ * @index: index
  * Return: exit status
  */
 
