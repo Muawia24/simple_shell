@@ -49,7 +49,7 @@ void Error(char *name, char *command, int idx)
  */
 char *_itoa(int n)
 {
-	char buffer[50];
+	char buffer[20];
 	int i;
 
 	i = 0;
@@ -80,14 +80,14 @@ char *_itoa(int n)
 
 void reverseString(char *string, int len)
 {
-	/* char tmp; */
+	char tmp;
 	int begin, end;
 
 	begin = 0;
 	end = len - 1;
 	while (begin < end)
 	{
-		/* tmp = string[begin]; */
+		tmp = string[begin];
 		string[begin] = string[end];
 		begin++;
 		end--;
