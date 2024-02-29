@@ -41,6 +41,26 @@ void Error(char *name, char *command, int idx)
 
 	free(index);
 }
+/**
+ * stringReverse - revserse string
+ * @str: string to reverse
+ */
+void stringReverse(char  *str)
+{
+	int len = strlen(str);
+	char *start = str;
+	char *end = str + len - 1;
+
+	while (start < end)
+	{
+		char temp = *start;
+		*start = *end;
+		*end = temp;
+		start++;
+		end--;
+	}
+
+
 
 /**
  * _itoa - string to number
@@ -67,7 +87,7 @@ char *_itoa(int n)
 	}
 
 	buffer[i] = '\0';
-	reverseString(buffer, i);
+	stringReverse(buffer);
 
 	return (_strdup(buffer));
 }

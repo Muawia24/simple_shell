@@ -19,6 +19,8 @@ extern char **environ;
 
 /* Functions */
 char *getInput(void);
+
+void stringReverse(char  *str);
 char **tokenizer(char *userLine);
 int _strlen(char *string);
 int _strcmp(char *string1, char *string2);
