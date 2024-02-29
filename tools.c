@@ -28,7 +28,7 @@ void freeAllocated(char **_2darray)
 
 void Error(char *name, char *command, int idx)
 {
-	char *index, msg[] = ": not found\n";
+	char *index, msg[] = ": command not found\n";
 
 	index = _itoa(idx);
 
@@ -59,6 +59,7 @@ void stringReverse(char  *str)
 		start++;
 		end--;
 	}
+}
 
 
 
@@ -90,26 +91,4 @@ char *_itoa(int n)
 	stringReverse(buffer);
 
 	return (_strdup(buffer));
-}
-
-/**
- * reverseString - reverse String
- * @string: string to reverse
- * @len: len of string
- */
-
-void reverseString(char *string, int len)
-{
-	/* char tmp; */
-	int begin, end;
-
-	begin = 0;
-	end = len - 1;
-	while (begin < end)
-	{
-		/* tmp = string[begin]; */
-		string[begin] = string[end];
-		begin++;
-		end--;
-	}
 }
