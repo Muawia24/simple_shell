@@ -60,7 +60,7 @@ void exitShell(char **command, int *status)
 void printEnv(char **command, int *status)
 {
 	int i;
-	
+
 
 	for (i = 0; environ[i]; i++)
 	{
