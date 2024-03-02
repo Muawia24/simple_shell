@@ -28,7 +28,7 @@ int is_builtin(char *command)
  * @index: index
  */
 
-void handleBuiltin(char **command, char **argv, int status, int index)
+void handleBuiltin(char **command, char **argv, int *status, int index)
 {
 	(void) argv;
 	(void) index;
@@ -45,10 +45,10 @@ void handleBuiltin(char **command, char **argv, int status, int index)
  * @status: int
  */
 
-void exitShell(char **command, int status)
+void exitShell(char **command, int *status)
 {
 	freeAllocated(command);
-	exit(status);
+	exit(*status);
 }
 
 /**
@@ -57,10 +57,10 @@ void exitShell(char **command, int status)
  * @status: st
  */
 
-void printEnv(char **command, int status)
+void printEnv(char **command, int *status)
 {
 	int i;
-	(void) status;
+	
 
 	for (i = 0; environ[i]; i++)
 	{
@@ -68,4 +68,5 @@ void printEnv(char **command, int status)
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	freeAllocated(command);
+	*status = 0;
 }

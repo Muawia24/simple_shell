@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 			continue;
 
 		if (is_builtin(command[0]))
-			handleBuiltin(command, argv, status, index);
+			handleBuiltin(command, argv, &status, index);
 		else
 			status = execCommand(command, argv, index);
 	}

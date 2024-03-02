@@ -37,10 +37,10 @@ char *_itoa(int n);
 void Error(char *name, char *command, int idx);
 void reverseString(char *string, int len);
 
-void handleBuiltin(char **command, char **argv, int status, int index);
-void exitShell(char **command, int status);
+void handleBuiltin(char **command, char **argv, int *status, int index);
+void exitShell(char **command, int *status);
 int is_builtin(char *command);
-void printEnv(char **command, int status);
+void printEnv(char **command, int *status);
 
 
 #endif
