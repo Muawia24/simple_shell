@@ -22,10 +22,10 @@ Features (This section can be expanded as you implement more features)
 
 ## Running the Project
 
-# Prerequisites
+### Prerequisites
 A C compiler (e.g., GCC, Clang)
 
-# Compilation:
+### Compilation:
 
 Navigate to the project directory in your terminal.
 
