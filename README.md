@@ -1,4 +1,4 @@
-#### Simple Shell Project
+# Simple Shell Project
 
 This project implements a simple command-line shell similar to existing shells like Bash or Zsh.
 About
@@ -22,10 +22,10 @@ Features (This section can be expanded as you implement more features)
 
 ## Running the Project
 
-#Prerequisites
+# Prerequisites
 A C compiler (e.g., GCC, Clang)
 
-#Compilation:
+# Compilation:
 
 Navigate to the project directory in your terminal.
 
@@ -67,6 +67,6 @@ This project is licensed under Specify License Here, e.g., MIT License: https://
 
 ## Authors
 
-- Mohammed Said[Github](https://github.com/abuabdelrahman1413).
-- Ahmed Muawia[Github](https://github.com/Muawia24), [LinkedIn](https://www.linkedin.com/in/ahmed-muawia-72b7031b4/).
+- Mohammed Said [Github](https://github.com/abuabdelrahman1413).
+- Ahmed Muawia [Github](https://github.com/Muawia24), [LinkedIn](https://www.linkedin.com/in/ahmed-muawia-72b7031b4/).
 
