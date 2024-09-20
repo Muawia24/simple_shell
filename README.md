@@ -22,10 +22,10 @@ Features (This section can be expanded as you implement more features)
 
 ## Running the Project
 
-### Prerequisites
+#### Prerequisites:
 A C compiler (e.g., GCC, Clang)
 
-### Compilation:
+#### Compilation:
 
 Navigate to the project directory in your terminal.
 
@@ -35,7 +35,7 @@ gcc -Wall *.c -o my_shell # Replace "my_shell" with your desired executable name
 ```
 
 
-## Execution:
+## Execution
 
 Run the compiled executable:
 ```bash
@@ -57,7 +57,7 @@ Type exit to exit the shell.
 - Handle I/O redirection (e.g., <, >, |).
 - Improve error handling and provide informative messages.
 
-## Contributing
+## Contribution
 
 This project is open to contributions. Feel free to fork the repository, add your improvements, and submit a pull request.
 
