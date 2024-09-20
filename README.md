@@ -1,4 +1,4 @@
-####Simple Shell Project
+#### Simple Shell Project
 
 This project implements a simple command-line shell similar to existing shells like Bash or Zsh.
 About
@@ -20,7 +20,7 @@ Features (This section can be expanded as you implement more features)
 - echo: Prints arguments to the console.
 - Supports basic execution of external programs with arguments.
 
-##Running the Project
+## Running the Project
 
 #Prerequisites
 A C compiler (e.g., GCC, Clang)
@@ -35,7 +35,7 @@ gcc -Wall *.c -o my_shell # Replace "my_shell" with your desired executable name
 ```
 
 
-##Execution:
+## Execution:
 
 Run the compiled executable:
 ```bash
@@ -49,7 +49,7 @@ Enter commands and press Enter to execute them.
 
 Type exit to exit the shell.
 
-##Future Enhancements (This section can be filled with planned features)
+## Future Enhancements (This section can be filled with planned features)
 
 - Implement additional built-in commands (e.g., ls, pwd).
 - Support command history and navigation.
@@ -57,15 +57,15 @@ Type exit to exit the shell.
 - Handle I/O redirection (e.g., <, >, |).
 - Improve error handling and provide informative messages.
 
-##Contributing
+## Contributing
 
 This project is open to contributions. Feel free to fork the repository, add your improvements, and submit a pull request.
 
-##License
+## License
 
 This project is licensed under Specify License Here, e.g., MIT License: https://choosealicense.com/.
 
-##Authors
+## Authors
 
 - Mohammed Said[Github](https://github.com/abuabdelrahman1413).
 - Ahmed Muawia[Github](https://github.com/Muawia24), [LinkedIn](https://www.linkedin.com/in/ahmed-muawia-72b7031b4/).
